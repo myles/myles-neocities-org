@@ -6,12 +6,25 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "astro": "astro",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "astro dev",
+    "prettier": "prettier . -c",
+    "prettier:write": "prettier . --write",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^6.3.1"
+    "@fontsource-variable/playwrite-ca": "^5.2.9",
+    "@fontsource/alice": "^5.2.8",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.1",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-astro-organize-imports": "^0.4.12",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.8.0"
   }
 }
