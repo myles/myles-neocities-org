@@ -1,0 +1,55 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: cd
+  cancel-in-progress: true
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: checkout
+        name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - id: setup-node
+        name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - id: install-dependencies
+        name: 📦 Install dependencies
+        run: npm ci
+
+      - id: cache-dependencies
+        name: 📂 Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - id: build
+        name: 🏗️ Build website
+        run: npm run build
+
+      - id: deploy
+        name: Deploy to Neocities
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: false
+          neocities_supporter: true
+          preview_before_deploy: true
+          dist_dir: dist/
