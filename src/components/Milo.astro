@@ -1,0 +1,24 @@
+---
+import Link from "./ui/Link.astro";
+import Card from "./ui/card/Card.astro";
+import CardBody from "./ui/card/CardBody.astro";
+import CardDivider from "./ui/card/CardDivider.astro";
+import CardHeader from "./ui/card/CardHeader.astro";
+
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<Card id="milo" class={[className]}>
+  <CardHeader title="Milo" href="https://profile.milo.garden" />
+  <CardDivider />
+  <CardBody>
+    <p>
+      <strong>milo</strong> is my alt personality on <Link
+        href="https://home.omg.lol/referred-by/milo">omg.lol</Link
+      >.
+    </p>
+  </CardBody>
+</Card>

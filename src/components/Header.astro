@@ -1,0 +1,28 @@
+---
+import Link from "./ui/Link.astro";
+import Card from "./ui/card/Card.astro";
+
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<Card font="playwrite" Element="header" id="header" class={[className]}>
+  <h1 class:list={["font-black text-2xl uppercase text-center text-pretty"]}>
+    <span>~*~</span> MYLES @ NEOCITIES <span>~*~</span>
+  </h1>
+  <h2 class:list={["text-lg mt-4 text-center text-pretty"]}>
+    Hey, I'm <strong>Myles Braithwaite</strong>! Welcome to my home on <Link
+      href="https://neocities.org">Neocities</Link
+    >!
+  </h2>
+</Card>
+
+<style>
+  @reference "../styles/global.css";
+
+  #header {
+    @apply md:col-span-2;
+  }
+</style>

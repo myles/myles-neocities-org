@@ -1,7 +1,14 @@
 ---
 import "@fontsource-variable/playwrite-ca";
 import "@fontsource/alice";
-import { Picture } from "astro:assets";
+import AboutMe from "../components/AboutMe.astro";
+import Elsewhere from "../components/Elsewhere.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Milo from "../components/Milo.astro";
+import ProfilePhoto from "../components/ProfilePhoto.astro";
+import Container from "../components/ui/Container.astro";
+import Wrapper from "../components/ui/Wrapper.astro";
 import "../styles/global.css";
 ---
 
@@ -17,145 +24,18 @@ import "../styles/global.css";
 
     <title>MYLES @ NEOCITIES</title>
   </head>
-  <body
-    id="myles-neocities-org"
-    class:list={[
-      "bg-[radial-gradient(circle_at_20%_30%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_70%_80%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_40%_60%,#ffff00_1px,transparent_2px),radial-gradient(circle_at_90%_10%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_10%_90%,#ffff00_1px,transparent_2px)]",
-      "bg-[#000080]",
-      "bg-[length:80px_80px,120px_120px,100px_100px,60px_60px,140px_140px,auto]",
-    ]}
-  >
-    <main
-      class:list={[
-        "max-w-4xl mx-auto px-4 py-8 grid gap-8 grid-cols-1",
-        "md:grid-cols-2 ",
-      ]}
-    >
-      <header
-        class:list={[
-          "font-playwrite bg-amber-50 rounded-lg p-6 text-center",
-          "md:col-span-2",
-          "hover:bg-amber-100 transition-colors duration-300",
-        ]}
-      >
-        <h1 class:list={["font-black text-2xl uppercase"]}>
-          <span>~*~</span> MYLES @ NEOCITIES <span>~*~</span>
-        </h1>
-        <h2 class:list={["text-lg mt-4"]}>
-          Hey, I'm <strong>Myles Braithwaite</strong>! Welcome to my home on <a
-            href="https://neocities.org"
-            class:list={[" text-blue-500", "hover:underline"]}>Neocities</a
-          >!
-        </h2>
-      </header>
-      <div class:list={["flex items-center justify-center"]}>
-        <Picture
-          src="https://uploads.myles.garden/persona-pfps/myles.jpg"
-          alt="Myles Braithwaite's Profile Photo"
-          inferSize
-          class:list={[
-            "rounded-lg border-4 border-amber-50",
-            "hover:border-amber-100 transition-colors duration-300",
-          ]}
-        />
-      </div>
-      <article
-        class:list={[
-          "bg-amber-50 rounded-lg p-6 font-alice",
-          "hover:bg-amber-100 transition-colors duration-300",
-        ]}
-      >
-        <h2 class:list={["text-xl font-bold mb-4 text-pretty text-center"]}>
-          About Me
-        </h2>
-        <p class:list={["mb-4 text-lg"]}>
-          I'm a software developer with a passion for creating web experiences.
-          I love exploring new technologies and sharing my knowledge with
-          others. When I'm not coding, you can find me hiking, playing video
-          games, or making truly terrible art and music.
-        </p>
-      </article>
-      <article
-        class:list={[
-          "bg-amber-50 rounded-lg p-6 font-alice",
-          "hover:bg-amber-100 transition-colors duration-300",
-        ]}
-      >
-        <h2 class:list={["text-xl font-bold mb-4 text-pretty text-center"]}>
-          Where else can you find me?
-        </h2>
-        <ul>
-          <li>
-            <a
-              href="https://myles.garden"
-              class:list={["text-blue-500", "hover:underline"]}>myles.garden</a
-            > - My personal website and blog where I share my projects, thoughts,
-            and more.
-          </li>
-          <li>
-            <a
-              href="https://cosocial.ca/@myles"
-              class:list={["text-blue-500", "hover:underline"]}
-              >@myles@cosocial.ca</a
-            > - My Mastodon profile where I post about my life, photography, and random
-            thoughts.
-          </li>
-          <li>
-            <a
-              href="https://bsky.app/profile/did:plc:lequzxcenrqczsr4gxexhmg4"
-              class:list={["text-blue-500", "hover:underline"]}>@myles.garden</a
-            > - My Bluesky profile where I share more about tech and software programming.
-          </li>
-          <li>
-            <a
-              href="https://instagram.com/myles"
-              class:list={["text-blue-500", "hover:underline"]}>@myles</a
-            > - My Instagram where I post photos random photos of what I see.
-          </li>
-          <li>
-            <a
-              href="https://github.com/myles"
-              class:list={["text-blue-500", "hover:underline"]}>@myles</a
-            > - My GitHub where I share my open source projects and code.
-          </li>
-        </ul>
-      </article>
-      <article
-        class:list={[
-          "bg-amber-50 rounded-lg p-6 font-alice",
-          "hover:bg-amber-100 transition-colors duration-300",
-        ]}
-      >
-        <h2 class:list={["text-xl font-bold mb-4 text-pretty text-center"]}>
-          <a
-            href="https://milo.garden"
-            class:list={["text-blue-500", "hover:underline"]}
-          >
-            milo
-          </a>
-        </h2>
-        <p class:list={["text-lg"]}>
-          <strong>milo</strong> is my alt personality on <a
-            href="https://home.omg.lol/referred-by/milo"
-            class:list={["text-blue-500", "hover:underline"]}>omg.log</a
-          >.
-        </p>
-      </article>
-      <footer
-        class:list={[
-          "bg-amber-50 rounded-lg p-6 font-alice",
-          "md:col-span-2",
-          "hover:bg-amber-100 transition-colors duration-300",
-        ]}
-      >
-        <h2 class:list={["text-xl font-bold mb-4 text-pretty text-center"]}>
-          Thanks for visiting!
-        </h2>
-        <p class:list={["text-lg"]}>
-          I hope you enjoy exploring my little corner of the internet. Feel free
-          to reach out if you want to chat or collaborate on something cool!
-        </p>
-      </footer>
-    </main>
+  <body id="myles-neocities-org">
+    <Wrapper>
+      <Container>
+        <Header />
+
+        <ProfilePhoto />
+        <AboutMe />
+        <Elsewhere />
+        <Milo />
+
+        <Footer />
+      </Container>
+    </Wrapper>
   </body>
 </html>

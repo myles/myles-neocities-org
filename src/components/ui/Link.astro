@@ -1,0 +1,18 @@
+---
+type Props = {
+  href: string;
+  class?: string;
+};
+const { href, class: className } = Astro.props;
+---
+
+<a href={href} class:list={["ui-link", className]}><slot /></a>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .ui-link {
+    @apply text-blue-500;
+    @apply transition-colors duration-300 hover:underline;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import Card from "./ui/card/Card.astro";
+import CardBody from "./ui/card/CardBody.astro";
+import CardHeader from "./ui/card/CardHeader.astro";
+import CardDvider from "./ui/card/CardDivider.astro";
+
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<Card Element="footer" id="footer" class:list={[className]}>
+  <CardHeader title="Thanks for visiting!" />
+  <CardDvider />
+  <CardBody>
+    <p>
+      I hope you enjoy exploring my little corner of the internet. Feel free to
+      reach out if you want to chat or collaborate on something cool!
+    </p>
+  </CardBody>
+</Card>
+
+<style>
+  @reference "../styles/global.css";
+
+  #footer {
+    @apply md:col-span-2;
+  }
+</style>

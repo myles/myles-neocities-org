@@ -1,0 +1,42 @@
+---
+import Link from "./ui/Link.astro";
+import Card from "./ui/card/Card.astro";
+import CardBody from "./ui/card/CardBody.astro";
+import CardDivider from "./ui/card/CardDivider.astro";
+import CardHeader from "./ui/card/CardHeader.astro";
+
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<Card id="elsewhere" class={[className]}>
+  <CardHeader title="Where else can you find me?" />
+  <CardDivider />
+  <CardBody>
+    <ul>
+      <li>
+        <Link href="https://myles.garden">myles.garden</Link> - My personal website
+        and blog where I share my projects, thoughts, and more.
+      </li>
+      <li>
+        <Link href="https://cosocial.ca/@myles">@myles@cosocial.ca</Link> - My Mastodon
+        profile where I post about my life, photography, and random thoughts.
+      </li>
+      <li>
+        <Link href="https://bsky.app/profile/did:plc:lequzxcenrqczsr4gxexhmg4"
+          >@myles.garden</Link
+        > - My Bluesky profile where I share more about tech and software programming.
+      </li>
+      <li>
+        <Link href="https://instagram.com/myles">@myles</Link> - My Instagram where
+        I post photos random photos of what I see.
+      </li>
+      <li>
+        <Link href="https://github.com/myles">@myles</Link> - My GitHub where I share
+        my open source projects and code.
+      </li>
+    </ul>
+  </CardBody>
+</Card>

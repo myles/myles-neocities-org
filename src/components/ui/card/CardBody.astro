@@ -1,0 +1,18 @@
+---
+type Props = {
+  class?: string[];
+};
+const { class: className } = Astro.props;
+---
+
+<section class:list={["ui-card-body", className]}>
+  <slot />
+</section>
+
+<style>
+  @reference "../../../styles/global.css";
+
+  .ui-card-body {
+    @apply text-lg;
+  }
+</style>

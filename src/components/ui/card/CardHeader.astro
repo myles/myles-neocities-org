@@ -1,0 +1,32 @@
+---
+import Link from "../Link.astro";
+
+type Props = {
+  title: string;
+  href?: string;
+  class?: string[];
+};
+const { title, href, class: className } = Astro.props;
+---
+
+<h2
+  class:list={["ui-card-header", href && "ui-card-header--has-link", className]}
+>
+  {
+    href ? (
+      <Link href={href} class:list={["ui-card-header__link"]}>
+        {title}
+      </Link>
+    ) : (
+      <span>{title}</span>
+    )
+  }
+</h2>
+
+<style>
+  @reference "../../../styles/global.css";
+
+  .ui-card-header {
+    @apply text-center text-xl font-bold text-pretty;
+  }
+</style>

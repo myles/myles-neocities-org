@@ -1,0 +1,16 @@
+---
+type Props = {
+  class?: string[];
+};
+const { class: className } = Astro.props;
+---
+
+<hr class:list={["ui-card-divider", className]} />
+
+<style>
+  @reference "../../../styles/global.css";
+
+  .ui-card-divider {
+    @apply my-4 border-t border-amber-800;
+  }
+</style>

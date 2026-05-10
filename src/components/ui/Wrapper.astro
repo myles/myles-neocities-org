@@ -1,0 +1,21 @@
+---
+type Props = {
+  class?: string[];
+};
+const { class: className } = Astro.props;
+---
+
+<div id="ui-wrapper" class:list={[className]}>
+  <slot />
+</div>
+
+<style>
+  @reference "../../styles/global.css";
+
+  #ui-wrapper {
+    @apply min-h-screen;
+    @apply bg-[#000080];
+    @apply bg-[radial-gradient(circle_at_20%_30%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_70%_80%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_40%_60%,#ffff00_1px,transparent_2px),radial-gradient(circle_at_90%_10%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_10%_90%,#ffff00_1px,transparent_2px)];
+    @apply bg-[length:80px_80px,120px_120px,100px_100px,60px_60px,140px_140px,auto];
+  }
+</style>

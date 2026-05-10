@@ -1,0 +1,46 @@
+---
+export type Props = {
+  font?: "playwrite" | "alice";
+  Element?: "header" | "article" | "footer";
+  id?: string;
+  class?: string[];
+};
+const {
+  font = "alice",
+  Element = "article",
+  id,
+  class: className,
+} = Astro.props;
+---
+
+<Element
+  id={id}
+  class:list={[
+    "ui-card",
+    Element === "header"
+      ? "ui-card--header"
+      : Element === "footer"
+        ? "ui-card--footer"
+        : "ui-card--article",
+    font === "playwrite" ? "ui-card--playwrite" : "ui-card--alice",
+    className,
+  ]}
+>
+  <slot />
+</Element>
+
+<style>
+  @reference "../../../styles/global.css";
+
+  .ui-card {
+    @apply rounded-lg bg-amber-50 p-6 shadow shadow-amber-100;
+    @apply transition-colors duration-300 hover:bg-amber-100;
+  }
+
+  .ui-card--playwrite {
+    @apply font-playwrite;
+  }
+  .ui-card--alice {
+    @apply font-alice;
+  }
+</style>

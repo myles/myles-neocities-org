@@ -1,0 +1,30 @@
+---
+import { Picture } from "astro:assets";
+
+type Props = {
+  class?: string[];
+};
+const { class: className } = Astro.props;
+---
+
+<div id="profile-photo" class:list={["profile-photo", className]}>
+  <Picture
+    src="https://uploads.myles.garden/persona-pfps/myles.jpg"
+    alt="Myles Braithwaite's Profile Photo"
+    inferSize
+    class:list={["profile-photo__image"]}
+  />
+</div>
+
+<style>
+  @reference "../styles/global.css";
+
+  .profile-photo {
+    @apply flex items-center justify-center;
+  }
+
+  .profile-photo__image {
+    @apply rounded-lg border-4 border-amber-50;
+    @apply transition-colors duration-300 hover:border-amber-100;
+  }
+</style>

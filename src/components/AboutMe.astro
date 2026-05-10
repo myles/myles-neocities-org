@@ -1,0 +1,24 @@
+---
+import Card from "./ui/card/Card.astro";
+import CardBody from "./ui/card/CardBody.astro";
+import CardDivider from "./ui/card/CardDivider.astro";
+import CardHeader from "./ui/card/CardHeader.astro";
+
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<Card id="about-me" class:list={[className]}>
+  <CardHeader title="About Me" />
+  <CardDivider />
+  <CardBody>
+    <p>
+      I'm a software developer with a passion for creating web experiences. I
+      love exploring new technologies and sharing my knowledge with others. When
+      I'm not coding, you can find me hiking, playing video games, or making
+      truly terrible art and music.
+    </p>
+  </CardBody>
+</Card>
