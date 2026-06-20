@@ -17,7 +17,7 @@
     "@fontsource-variable/playwrite-ca": "^5.2.9",
     "@fontsource/alice": "^5.2.8",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.3.1",
+    "astro": "^6.4.6",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
