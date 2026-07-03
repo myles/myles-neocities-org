@@ -3,16 +3,39 @@ type Props = {
   class?: string;
 };
 const { class: className } = Astro.props;
+
+const buttons = [
+  {
+    href: "https://myles.garden",
+    src: "https://uploads.myles.garden/88x31/myles-garden.svg",
+    alt: "myles' garden",
+  },
+  {
+    href: "https://societyofbrevity.com",
+    src: "https://uploads.myles.garden/88x31/societyofbrevity-com.svg",
+    alt: "The Society of Brevity",
+  },
+  {
+    href: "https://people.pledge.party",
+    src: "https://uploads.myles.garden/88x31/found/people-pledge-badge-party.svg",
+    alt: "The People Pledge",
+  },
+];
 ---
 
-<div class:list{["buttons", "flex flex-row flex-nowrap justify-center-safe gap-2", "[&_a]:block", className]}>
-  <a href="https://myles.garden">
-    <img src="https://uploads.myles.garden/88x31/myles-garden.svg" width="88" height="31" alt="myles' garden" />
-  </a>
-  <a href="https://societyofbrevity.com">
-    <img src="https://uploads.myles.garden/88x31/societyofbrevity-com.svg" width="88" height="31" alt="The Society of Brevity" />
-  </a>
-  <a href="https://people.pledge.party">
-    <img src="https://uploads.myles.garden/88x31/found/people-pledge-badge-party.svg" width="88" height="31" alt="The People Pledge" />
-  </a>
+<div
+  class:list={[
+    "buttons",
+    "flex flex-row flex-nowrap justify-center-safe gap-2",
+    "[&_a]:block",
+    className,
+  ]}
+>
+  {
+    buttons.map((button) => (
+      <a href={button.href} target="_blank" rel="noopener noreferrer">
+        <img src={button.src} width="88" height="31" alt={button.alt} />
+      </a>
+    ))
+  }
 </div>
