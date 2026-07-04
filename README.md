@@ -8,20 +8,20 @@ I've written up [how I built the CI/CD system for auto-deploy using GitHub Actio
 
 ## Running Locally
 
-​```console
+```console
 git clone https://github.com/myles/myles-neocities-org.git
 cd myles-neocities-org
 npm install
 npm run dev
-​```
+```
 
 The site will be available at `http://localhost:4321`.
 
 To build the production site:
 
-​```console
+```console
 npm run build
-​```
+```
 
 ## A Note on Support
 
