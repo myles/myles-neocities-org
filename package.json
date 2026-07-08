@@ -8,17 +8,20 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "check": "astro check",
     "dev": "astro dev",
     "prettier": "prettier . -c",
     "prettier:write": "prettier . --write",
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.9",
     "@fontsource-variable/playwrite-ca": "^5.2.9",
     "@fontsource/alice": "^5.2.8",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.1",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "prettier": "^3.8.3",

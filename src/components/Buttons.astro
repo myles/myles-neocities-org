@@ -28,14 +28,7 @@ const buttons = [
 ];
 ---
 
-<div
-  class:list={[
-    "buttons",
-    "flex flex-row flex-nowrap justify-center-safe gap-2",
-    "[&_a]:block",
-    className,
-  ]}
->
+<div id="buttons" class:list={[className]}>
   {
     buttons.map((button) => (
       <a href={button.href} target="_blank" rel="noopener noreferrer">
@@ -44,3 +37,12 @@ const buttons = [
     ))
   }
 </div>
+
+<style>
+  @reference "../styles/global.css";
+
+  #buttons {
+    @apply flex flex-row flex-nowrap justify-center-safe gap-2;
+    @apply [&_a]:block;
+  }
+</style>

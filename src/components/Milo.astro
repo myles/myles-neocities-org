@@ -1,9 +1,6 @@
 ---
 import Link from "./ui/Link.astro";
-import Card from "./ui/card/Card.astro";
-import CardBody from "./ui/card/CardBody.astro";
-import CardDivider from "./ui/card/CardDivider.astro";
-import CardHeader from "./ui/card/CardHeader.astro";
+import { Card, CardBody, CardDivider, CardHeader } from "./ui/card";
 
 type Props = {
   class?: string;
@@ -11,7 +8,7 @@ type Props = {
 const { class: className } = Astro.props;
 ---
 
-<Card id="milo" class={[className]}>
+<Card id="milo" class:list={[className]}>
   <CardHeader title="milo" href="https://profile.milo.garden" />
   <CardDivider />
   <CardBody>

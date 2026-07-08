@@ -11,6 +11,45 @@ import ProfilePhoto from "../components/ProfilePhoto.astro";
 import Container from "../components/ui/Container.astro";
 import Wrapper from "../components/ui/Wrapper.astro";
 import "../styles/global.css";
+
+const SITE_TITLE = "MYLES @ NEOCITIES";
+const SITE_DESCRIPTION = "Myles' personal website, hosted on Neocities.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://myles.neocities.org/#WebSite",
+      name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      url: "https://myles.neocities.org",
+      publisher: { "@id": "https://myles.garden/#Person" },
+      isPartOf: { "@id": "https://neocities.org/#WebSite" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://myles.neocities.org/#WebPage",
+      name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      url: "https://myles.neocities.org",
+      inLanguage: "en-CA",
+      isPartOf: { "@id": "https://myles.neocities.org/#WebSite" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://myles.garden/#Person",
+      name: "Myles Braithwaite",
+      url: "https://myles.garden",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://neocities.org/#WebSite",
+      name: "Neocities",
+      url: "https://neocities.org",
+    },
+  ],
+};
 ---
 
 <html lang="en">
@@ -25,19 +64,32 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>MYLES @ NEOCITIES</title>
+    <title>{SITE_TITLE}</title>
+    <meta name="description" content={SITE_DESCRIPTION} />
+
+    <meta name="theme-color" content="#000080" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+      is:inline
+    />
   </head>
   <body id="myles-neocities-org">
     <Wrapper>
       <Container>
-        <Header />
+        <Header
+          class:list={["col-span-3 -order-1", "md:col-span-2 md:order-0"]}
+        />
+        <ProfilePhoto
+          class:list={["col-span-1 -order-2", "md:col-span-2 md:order-0"]}
+        />
 
-        <ProfilePhoto />
-        <AboutMe />
-        <Elsewhere />
-        <Milo />
+        <AboutMe class:list={["col-span-full", "md:col-span-2"]} />
+        <Elsewhere class:list={["col-span-full", "md:col-span-2"]} />
+        <Milo class:list={["col-span-full", "md:col-span-2"]} />
 
-        <Footer />
+        <Footer class:list={["col-span-full", "md:col-span-2"]} />
 
         <Buttons class:list={["col-span-full"]} />
       </Container>
