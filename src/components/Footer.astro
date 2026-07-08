@@ -2,7 +2,7 @@
 import Card from "./ui/card/Card.astro";
 import CardBody from "./ui/card/CardBody.astro";
 import CardHeader from "./ui/card/CardHeader.astro";
-import CardDvider from "./ui/card/CardDivider.astro";
+import CardDivider from "./ui/card/CardDivider.astro";
 
 type Props = {
   class?: string;
@@ -12,7 +12,7 @@ const { class: className } = Astro.props;
 
 <Card Element="footer" id="footer" class:list={[className]}>
   <CardHeader title="Thanks for visiting!" />
-  <CardDvider />
+  <CardDivider />
   <CardBody>
     <p>
       I hope you enjoy exploring my little corner of the internet. Feel free to
