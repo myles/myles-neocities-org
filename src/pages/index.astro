@@ -9,7 +9,6 @@ import Header from "../components/Header.astro";
 import Milo from "../components/Milo.astro";
 import ProfilePhoto from "../components/ProfilePhoto.astro";
 import Container from "../components/ui/Container.astro";
-import Wrapper from "../components/ui/Wrapper.astro";
 import "../styles/global.css";
 
 const SITE_TITLE = "MYLES @ NEOCITIES";
@@ -76,23 +75,32 @@ const structuredData = {
     />
   </head>
   <body id="myles-neocities-org">
-    <Wrapper>
-      <Container>
-        <Header
-          class:list={["col-span-3 -order-1", "md:col-span-2 md:order-0"]}
-        />
-        <ProfilePhoto
-          class:list={["col-span-1 -order-2", "md:col-span-2 md:order-0"]}
-        />
+    <Container>
+      <Header
+        class:list={["col-span-3 -order-1", "md:col-span-2 md:order-0"]}
+      />
+      <ProfilePhoto
+        class:list={["col-span-1 -order-2", "md:col-span-2 md:order-0"]}
+      />
 
-        <AboutMe class:list={["col-span-full", "md:col-span-2"]} />
-        <Elsewhere class:list={["col-span-full", "md:col-span-2"]} />
-        <Milo class:list={["col-span-full", "md:col-span-2"]} />
+      <AboutMe class:list={["col-span-full", "md:col-span-2"]} />
+      <Elsewhere class:list={["col-span-full", "md:col-span-2"]} />
+      <Milo class:list={["col-span-full", "md:col-span-2"]} />
 
-        <Footer class:list={["col-span-full", "md:col-span-2"]} />
+      <Footer class:list={["col-span-full", "md:col-span-2"]} />
 
-        <Buttons class:list={["col-span-full"]} />
-      </Container>
-    </Wrapper>
+      <Buttons class:list={["col-span-full"]} />
+    </Container>
   </body>
 </html>
+
+<style>
+  @reference "../styles/global.css";
+
+  #myles-neocities-org {
+    @apply min-h-screen;
+    @apply bg-primary;
+    @apply bg-[radial-gradient(circle_at_20%_30%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_70%_80%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_40%_60%,#ffff00_1px,transparent_2px),radial-gradient(circle_at_90%_10%,#ffffff_1px,transparent_2px),radial-gradient(circle_at_10%_90%,#ffff00_1px,transparent_2px)];
+    @apply bg-size-[80px_80px,120px_120px,100px_100px,60px_60px,140px_140px,auto];
+  }
+</style>

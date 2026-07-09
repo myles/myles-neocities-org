@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --color-primary: #000080;
+
   --font-playwrite: "Playwrite CA Variable", cursive;
   --font-alice: "Alice", serif;
 }
